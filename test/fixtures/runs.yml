@@ -1,0 +1,49 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+a_team_postgres:
+  id: 1
+  project: "A Team Van 2.0"
+  build: "postgres"
+  started: <%= Time.utc(2006, 7, 12, 1, 23, 45).to_s :db %>
+  status: "running"
+  log: "This is a really trivial change that could never break the build."
+  revision: 1235
+  committer: "B.A."
+  created_at:   <%= Time.utc(2006, 7, 12, 1, 23, 45).to_s :db %>
+  updated_at:   <%= Time.utc(2006, 7, 12, 1, 23, 45).to_s :db %>
+  repository: 'http://trac.stone/changeset/#{rev}'
+a_team_oracle:
+  id: 2
+  project: "A Team Van 2.0"
+  build: "oracle"
+  started: <%= Time.utc(2006, 7, 12, 1, 3, 5).to_s :db %>
+  status: "running"
+  log: "Nothing in oracle ever works right."
+  revision: 1234
+  committer: "hannibal"
+  created_at:   <%= Time.utc(2006, 7, 12, 1, 3, 5).to_s :db %>
+  updated_at:   <%= Time.utc(2006, 7, 12, 1, 3, 5).to_s :db %>
+  repository: 'http://trac.stone/changeset/#{rev}'
+rush_2112_oracle:
+  id: 3
+  project: "Rush 2112"
+  build: "oracle"
+  started: <%= Time.utc(1976, 5, 1, 6, 21, 0).to_s :db %>
+  finished: <%= Time.utc(1976, 5, 1, 6, 21, 12).to_s :db %>
+  status: "successful"
+  log: "Adding Temples of Syrinx -- still needs tests."
+  revision: 2112
+  committer: "Getty Lee"
+  created_at:   <%= Time.utc(1976, 5, 1, 6, 21, 0).to_s :db %>
+  updated_at:   <%= Time.utc(1976, 5, 1, 6, 21, 12).to_s :db %>
+a_team_postgres_old:
+  id: 4
+  project: "A Team Van 2.0"
+  build: "postgres"
+  started: <%= Time.utc(2006, 6, 1, 1, 1, 1).to_s :db %>
+  status: "running"
+  log: "first commit ever"
+  revision: 1234
+  committer: "B.A."
+  created_at:   <%= Time.utc(2006, 7, 12, 1, 23, 45).to_s :db %>
+  updated_at:   <%= Time.utc(2006, 7, 12, 1, 23, 45).to_s :db %>
+  repository: 'http://trac.stone/changeset/#{rev}'

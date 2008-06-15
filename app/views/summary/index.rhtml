@@ -1,0 +1,6 @@
+<%= render :partial => 'builds', :object => @summary, :locals => { :caption => 'Completed Builds' } %>
+<%= render :partial => 'builds', :object => @running, :locals => { :caption => 'Running Builds' } %>
+
+<div id="footer">
+  Page rendered on <%= Time.now %>.
+</div>

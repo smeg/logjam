@@ -1,0 +1,45 @@
+<div class="container">
+<% if builds.length > 0 -%>
+<% even = even ? false : true %>
+<table>    
+  <caption><%= caption %></caption>
+  <thead> 
+    <tr class="heading">
+	  <th>project</th>
+	  <th>build</th>
+	  <th>status</th>
+	  <th>started</th>
+	  <th>finished</th>
+	  <th>committer</th>
+	  <th>revision</th>
+	  <th>log</th>
+    </tr>  
+  </thead>
+<%   builds.each do |build| -%>
+  <tbody>
+	<tr class="<%= even ? 'even' : 'odd' %> build_<%= build.status || 'unknown' %>">
+	  <td class="detail_project"><%= build.project %></td>
+	  <td class="detail_build"><%= build.build %></td>
+	  <td class="detail_status"><%= build.status || '?'%></td>
+	  <td class="detail_started"><%= build.started ? time_ago_in_words(build.started, true) + ' ago': '?' %></td>
+	  <td class="detail_finished"><%= build.finished ? time_ago_in_words(build.finished, true) + ' ago' : (build.status == 'running' ? '...' : '?') %></td>
+	  <td class="detail_committer"><%= build.committer || '?' %></td>
+	  <td class="detail_revision"><%= link_to_revision(build.revision, build.repository) %></td>
+	  <td class="detail_log"><%= build.log ? link_to_function("Log", "Toggle.display('log_#{build.id}')") : ' ' %></td>
+    </tr>
+  </tbody>
+  <tbody id="log_<%= build.id %>" style="display: none">
+	<tr class="<%= even ? 'even' : 'odd' %> build_<%= build.status || 'unknown' %>">
+	  <td colspan="8">      
+		<div class="log">
+		  <%= build.log.split("\n").join("<br/>\n") || 'No log information for this commit.'%>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+<%   end-%>
+</table>
+<% else -%>
+No build information to show.
+<% end -%>
+</div>

@@ -1,0 +1,15 @@
+login: &login
+  adapter: postgresql
+  host: localhost
+
+development:
+  <<: *login
+  database: builds_development
+
+test:
+  <<: *login
+  database: builds_test
+
+production:
+  database: builds_production 
+  <<: *login

@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+  	<title><%= @title %></title>
+  	<%= javascript_include_tag :defaults %>
+  	<%= stylesheet_link_tag 'logjam' %>
+    <meta http-equiv="refresh" content="90">
+  </head>
+  <body class="build-<%= @good ? 'good' : 'bad' %>">
+    <%= @content_for_layout %>
+  </body>
+</html>

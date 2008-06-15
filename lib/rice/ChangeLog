@@ -1,0 +1,65 @@
+Wed Jun 13 19:16:47 2001  akira yamada  <akira@arika.org>
+
+	* rice/irc.rb (Connection#push): delay to write message for @delay
+	secs.
+
+Tue Jun  5 17:59:02 2001  akira yamada  <akira@arika.org>
+
+	* rice/drb.rb: new. DRb support.
+
+	* examples/drbc.rb, examples/drbs.rb: server and client.
+
+Tue Jun  5 13:41:01 2001  akira yamada  <akira@arika.org>
+
+	* rice/irc.rb: used MonitorMixin instead of Mutex.
+
+Tue Jun  5 12:10:13 2001  akira yamada  <akira@arika.org>
+
+	* rice/irc.rb: renamed ConnectionClosed to Closed.
+
+	* rice/irc.rb: removed write_th.
+
+Fri May 25 03:16:51 2001  akira yamada  <akira@arika.org>
+
+	* examples/rwiki-gw.rb: new.
+
+Thu May 24 20:48:47 2001  akira yamada  <akira@arika.org>
+
+	* examples/ranking.rb: new.
+
+Wed May 23 18:36:43 2001  akira yamada  <akira@arika.org>
+
+	* rice/irc.rb (Message#to_s): only put ':' if params contains ' '
+	or ':'.
+
+Fri May 18 21:45:29 2001  akira yamada  <akira@arika.org>
+
+	* rice/proxy.rb, examples/tinyproxy.rb: added.
+
+	* rice/irc.rb (Message::PATTERN::NICKNAME): includes DIGIT.
+
+	* rice/irc.rb (Message#to_s): params matched [\x00-\x1f] are
+	handled as trailer.
+
+	* rice/irc.rb (Connection#{read_thread, write_thread}): read
+	thread and write thread are in one methods.
+
+Wed May 16 03:00:45 2001  akira yamada  <akira@arika.org>
+
+	* rice/irc.rb (Connection#start): start can take a block.
+
+	* examples/ex7.rb: new.
+
+Wed May 16 01:10:05 2001  akira yamada  <akira@arika.org>
+
+	* renamed to rice.
+
+	* rice/irc.rb (Connection#setup_read_thread): resuce bad messages
+	from ircd 2.10.07-1.
+
+	* version 0.0.0.1.
+
+Wed May 16 00:17:06 2001  akira yamada  <akira@arika.org>
+
+	* version 0.0.0.0.
+
